@@ -1,0 +1,4 @@
+{
+  "palindrome_test.py": true,
+  "permutation_test.py::RecursionTest::test_permutation_by_length_with_small_integers_pick_k": true
+}
