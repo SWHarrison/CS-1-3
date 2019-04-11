@@ -1,4 +1,16 @@
 {
+  "linkedlist_text.py::LinkedListTest::test_append": true,
+  "linkedlist_text.py::LinkedListTest::test_delete": true,
+  "linkedlist_text.py::LinkedListTest::test_get_at_index": true,
+  "linkedlist_text.py::LinkedListTest::test_init_with_list": true,
+  "linkedlist_text.py::LinkedListTest::test_insert_at_index": true,
+  "linkedlist_text.py::LinkedListTest::test_prepend": true,
+  "linkedlist_text.py::LinkedListTest::test_replace": true,
+  "linkedlist_text.py::LinkedListTest::test_size": true,
   "palindrome_test.py": true,
+  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_mixed_casing_and_punctuation": true,
+  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace": true,
+  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_mixed_casing": true,
+  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_punctuation": true,
   "permutation_test.py::RecursionTest::test_permutation_by_length_with_small_integers_pick_k": true
 }

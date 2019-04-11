@@ -33,6 +33,7 @@ def find_index(text, pattern, offset = 0):
 
                 if(text[index+i] != pattern[i]):
                     no_nonmatch = False
+                    index += i
                     break
 
             if(no_nonmatch):
@@ -106,10 +107,10 @@ if __name__ == '__main__':
     #main()
 
     #print(find_index('abCabDabE','ab',3))
-    print(find_all_indexes('abababaabaaabab', 'abab'))
+    print(find_index('abababaabaaabab', 'baab'))
 
-    arr = [[0,1],[2,3]]
+    #arr = [[0,1],[2,3]]
 
-    for i in range(len(arr) * len(arr[0])):
+    #for i in range(len(arr) * len(arr[0])):
 
-        print(arr[i//2][i%2])
+        #print(arr[i//2][i%2])

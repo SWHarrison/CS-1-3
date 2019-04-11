@@ -1,11 +1,15 @@
 [
-  "strings_test.py::StringsTest::test_contains_with_complex_patterns",
-  "strings_test.py::StringsTest::test_contains_with_matching_patterns",
-  "strings_test.py::StringsTest::test_contains_with_non_matching_patterns",
-  "strings_test.py::StringsTest::test_find_all_indexes_with_complex_patterns",
-  "strings_test.py::StringsTest::test_find_all_indexes_with_matching_patterns",
-  "strings_test.py::StringsTest::test_find_all_indexes_with_non_matching_patterns",
-  "strings_test.py::StringsTest::test_find_index_with_complex_patterns",
-  "strings_test.py::StringsTest::test_find_index_with_matching_patterns",
-  "strings_test.py::StringsTest::test_find_index_with_non_matching_patterns"
+  "linkedlist_test.py::NodeTest::test_init",
+  "linkedlist_test.py::LinkedListTest::test_append",
+  "linkedlist_test.py::LinkedListTest::test_delete",
+  "linkedlist_test.py::LinkedListTest::test_find",
+  "linkedlist_test.py::LinkedListTest::test_get_at_index",
+  "linkedlist_test.py::LinkedListTest::test_init",
+  "linkedlist_test.py::LinkedListTest::test_init_with_list",
+  "linkedlist_test.py::LinkedListTest::test_insert_at_index",
+  "linkedlist_test.py::LinkedListTest::test_items",
+  "linkedlist_test.py::LinkedListTest::test_length",
+  "linkedlist_test.py::LinkedListTest::test_prepend",
+  "linkedlist_test.py::LinkedListTest::test_replace",
+  "linkedlist_test.py::LinkedListTest::test_size"
 ]
