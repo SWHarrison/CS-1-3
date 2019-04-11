@@ -1,4 +1,6 @@
 {
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_insert_at_index": true,
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_prepend": true,
   "linkedlist_text.py::LinkedListTest::test_append": true,
   "linkedlist_text.py::LinkedListTest::test_delete": true,
   "linkedlist_text.py::LinkedListTest::test_get_at_index": true,

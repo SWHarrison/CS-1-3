@@ -1,15 +1,15 @@
 [
-  "linkedlist_test.py::NodeTest::test_init",
-  "linkedlist_test.py::LinkedListTest::test_append",
-  "linkedlist_test.py::LinkedListTest::test_delete",
-  "linkedlist_test.py::LinkedListTest::test_find",
-  "linkedlist_test.py::LinkedListTest::test_get_at_index",
-  "linkedlist_test.py::LinkedListTest::test_init",
-  "linkedlist_test.py::LinkedListTest::test_init_with_list",
-  "linkedlist_test.py::LinkedListTest::test_insert_at_index",
-  "linkedlist_test.py::LinkedListTest::test_items",
-  "linkedlist_test.py::LinkedListTest::test_length",
-  "linkedlist_test.py::LinkedListTest::test_prepend",
-  "linkedlist_test.py::LinkedListTest::test_replace",
-  "linkedlist_test.py::LinkedListTest::test_size"
+  "doublelinkedlist_test.py::NodeTest::test_init",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_append",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_delete",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_find",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_get_at_index",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_init",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_init_with_list",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_insert_at_index",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_items",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_length",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_prepend",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_replace",
+  "doublelinkedlist_test.py::DoubleLinkedListTest::test_size"
 ]
