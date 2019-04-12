@@ -28,7 +28,7 @@ class DoubleLinkedList():
     def __str__(self):
         """Return a formatted string representation of this linked list."""
         items = ['({!r})'.format(item) for item in self.items()]
-        return '[{}]'.format(' -> '.join(items))
+        return '[{}]'.format('<- -> '.join(items))
 
     def __repr__(self):
         """Return a string representation of this linked list."""
@@ -81,13 +81,15 @@ class DoubleLinkedList():
         # O(1) time as it does not depend on size of list.
 
         new_head = Node(data)
-        new_head.next = self.head
-        self.head.previous = new_head
+        old_head = self.head
+        new_head.next = old_head
         self.head = new_head
         self.size += 1
 
         if(self.size == 1):
             self.tail = self.head
+        else:
+            old_head.previous = self.head
 
     def get_at_index(self, index):
         """Return the item at the given index in this linked list, or
@@ -132,7 +134,8 @@ class DoubleLinkedList():
         new_node = Node(item)
         new_node.next = current_next
         new_node.previous = current
-        current_next.previous = new_node
+        if(current_next != None):
+            current_next.previous = new_node
         current.next = new_node
         self.size += 1
 
@@ -290,12 +293,35 @@ def test_linked_list():
     print(ll)
     ll.delete('C')
     print(ll)
-    #ll.delete('A')
-    #print(ll)
+    ll.delete('D')
+    print(ll)
     print('head: {}'.format(ll.head))
     print('tail: {}'.format(ll.tail))
     print('size: {}'.format(ll.size))
     print('length: {}'.format(ll.length()))
+
+    ll.insert_at_index(0,'B')
+    for node in ll:
+        print("Previous Node is " + str(node.previous))
+        print(node)
+        print("Next Node is " + str(node.next))
+    ll.insert_at_index(0,'A')
+    for node in ll:
+        print("Previous Node is " + str(node.previous))
+        print(node)
+        print("Next Node is " + str(node.next))
+    ll.insert_at_index(2,'D')
+    for node in ll:
+        print("Previous Node is " + str(node.previous))
+        print(node)
+        print("Next Node is " + str(node.next))
+    ll.insert_at_index(2,'C')
+    for node in ll:
+        print("Previous Node is " + str(node.previous))
+        print(node)
+        print("Next Node is " + str(node.next))
+
+    print(ll)
 
 
 if __name__ == '__main__':
