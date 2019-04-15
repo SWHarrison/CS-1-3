@@ -115,14 +115,20 @@ class DoubleLinkedListTest(unittest.TestCase):
         assert ll.head.data == 'A'  # new head (at index 0)
         assert ll.tail.data == 'B'  # unchanged (now at index 1)
         assert ll.size == 2
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'A'
         ll.insert_at_index(2, 'D')  # append('D')
         assert ll.head.data == 'A'  # unchanged (at index 0)
         assert ll.tail.data == 'D'  # new tail (now at index 2)
         assert ll.size == 3
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'B'
         ll.insert_at_index(2, 'C')  # insert 'C' between 'B' and 'D'
         assert ll.head.data == 'A'  # unchanged (at index 0)
         assert ll.tail.data == 'D'  # unchanged (now at index 3)
         assert ll.size == 4
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'C'
         with self.assertRaises(ValueError):
             ll.insert_at_index(5, 'X')  # index too high
         with self.assertRaises(ValueError):
@@ -138,10 +144,14 @@ class DoubleLinkedListTest(unittest.TestCase):
         assert ll.head.data == 'A'  # unchanged
         assert ll.tail.data == 'B'  # new tail
         assert ll.size == 2
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'A'
         ll.append('C')
         assert ll.head.data == 'A'  # unchanged
         assert ll.tail.data == 'C'  # new tail
         assert ll.size == 3
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'B'
 
     def test_prepend(self):
         ll = DoubleLinkedList()
@@ -153,10 +163,14 @@ class DoubleLinkedListTest(unittest.TestCase):
         assert ll.head.data == 'B'  # new head
         assert ll.tail.data == 'C'  # unchanged
         assert ll.size == 2
+        assert ll.head.next.data  == 'C'
+        assert ll.tail.previous.data  == 'B'
         ll.prepend('A')
         assert ll.head.data == 'A'  # new head
         assert ll.tail.data == 'C'  # unchanged
         assert ll.size == 3
+        assert ll.head.next.data  == 'B'
+        assert ll.tail.previous.data  == 'B'
 
     def test_find(self):
         ll = DoubleLinkedList(['A', 'B', 'C'])

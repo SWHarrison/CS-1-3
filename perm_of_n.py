@@ -78,6 +78,8 @@ def all_perms(n):
     perms = recursive_perm(num_list)
     return perms
 
+previous_perms = {}
+
 def recursive_perm(arr):
 
     #print("*********" + str(arr))
@@ -87,12 +89,20 @@ def recursive_perm(arr):
         to_return.append([arr[0]])
         return to_return
 
+    check_value = tuple(arr)
+    #print(check_value)
+    if(check_value in previous_perms):
+        #print("using previous work")
+        return previous_perms[check_value]
+
     to_return = []
 
     for value in arr:
 
         new_list = arr.copy()
         new_list.remove(value)
+
+        next_value= []
 
         next_value = recursive_perm(new_list)
 
@@ -101,9 +111,10 @@ def recursive_perm(arr):
             to_add.insert(0, value)
             to_return.append(to_add)
 
+    previous_perms[check_value] = to_return
     return to_return
 
-print(all_perms(3))
-perm = (permutation(5, 2))
-print(perm)
-print(len(perm))
+print(all_perms(10))
+#perm = (permutation(5, 2))
+#print(perm)
+#print(len(perm))

@@ -127,7 +127,7 @@ class DoubleLinkedList():
         # TODO: Find the node before the given index and insert item after it
 
         current = self.head
-        for i in range(index):
+        for i in range(index-1):
             current = current.next
 
         current_next = current.next

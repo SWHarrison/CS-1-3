@@ -107,8 +107,12 @@ class LinkedList():
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1) when index to insert at is 0 or size of list
+        Worst case running time: O(n) when index to insert at is size of list - 1"""
+
+        # Check if the given index is out of range and if so raise an error
+        if not (0 <= index <= self.size):
+            raise ValueError('List index out of range: {}'.format(index))
 
         if(index == 0):
             self.prepend(item)
@@ -118,13 +122,8 @@ class LinkedList():
             self.append(item)
             return
 
-        # Check if the given index is out of range and if so raise an error
-        if not (0 <= index <= self.size):
-            raise ValueError('List index out of range: {}'.format(index))
-        # TODO: Find the node before the given index and insert item after it
-
         current = self.head
-        for i in range(index):
+        for i in range(index-1):
             current = current.next
 
         current_next = current.next
@@ -162,7 +161,8 @@ class LinkedList():
         return None
 
     def replace(self, old_data, new_data):
-        # O(n) time as it needs to go through the list
+        # O(1) Best case when replacing at front of list
+        # O(n) Worst case when element not in list or at end of list
 
         print("Replacing " + str(old_data) + " with " + str(new_data))
         node = self._find_node(lambda data : data == old_data)
