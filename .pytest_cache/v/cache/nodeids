@@ -1,15 +1,11 @@
 [
-  "doublelinkedlist_test.py::NodeTest::test_init",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_append",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_delete",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_find",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_get_at_index",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_init",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_init_with_list",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_insert_at_index",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_items",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_length",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_prepend",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_replace",
-  "doublelinkedlist_test.py::DoubleLinkedListTest::test_size"
+  "deque_test.py::DequeTest::test_back",
+  "deque_test.py::DequeTest::test_front",
+  "deque_test.py::DequeTest::test_init",
+  "deque_test.py::DequeTest::test_init_with_list",
+  "deque_test.py::DequeTest::test_length",
+  "deque_test.py::DequeTest::test_pop_back",
+  "deque_test.py::DequeTest::test_pop_front",
+  "deque_test.py::DequeTest::test_push_back",
+  "deque_test.py::DequeTest::test_push_front"
 ]

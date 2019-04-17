@@ -1,4 +1,5 @@
 {
+  "deque_test.py::DequeTest::test_dequeue": true,
   "linkedlist_text.py::LinkedListTest::test_append": true,
   "linkedlist_text.py::LinkedListTest::test_delete": true,
   "linkedlist_text.py::LinkedListTest::test_get_at_index": true,

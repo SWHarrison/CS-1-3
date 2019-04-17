@@ -125,17 +125,17 @@ class DoubleLinkedList():
         if not (0 <= index <= self.size):
             raise ValueError('List index out of range: {}'.format(index))
         # TODO: Find the node before the given index and insert item after it
-
-        current = self.head
-        for i in range(index-1):
-            current = current.next
+        current = None
+        if index < self.size/2:
+            current = self.head
+            for i in range(index-1):
+                current = current.next
 
         current_next = current.next
         new_node = Node(item)
         new_node.next = current_next
         new_node.previous = current
-        if(current_next != None):
-            current_next.previous = new_node
+        current_next.previous = new_node
         current.next = new_node
         self.size += 1
 

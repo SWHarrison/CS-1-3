@@ -1,7 +1,9 @@
 #!python
 
 def contains(text, pattern):
-    """Return a boolean indicating whether pattern occurs in text."""
+    """Return a boolean indicating whether pattern occurs in text.
+    O(n) is worst case where no pattern is found as it must parse the text
+    O(m) is best case where pattern is found where m is length of pattern"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement contains here (iteratively and/or recursively)
@@ -15,10 +17,12 @@ def contains(text, pattern):
 
 def find_index(text, pattern, offset = 0):
     """Return the starting index of the first occurrence of pattern in text,
-    or None if not found."""
+    or None if not found.
+    O(n + m) run time is worst case scenario where n is length of
+    text and m is length of pattern, and the pattern appears
+    O(n) is best case where no pattern is found as it must parse the text"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
-    # TODO: Implement find_index here (iteratively and/or recursively)
 
     if(len(pattern) == 0):
         return 0 + offset
@@ -43,7 +47,11 @@ def find_index(text, pattern, offset = 0):
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
-    or an empty list if not found."""
+    or an empty list if not found.
+    O(n * m) run time is worst case scenario where n is length of
+    text and m is length of pattern, and the pattern appears as many times as
+    possible in text
+    O(n) is best case where no pattern is found as it must parse the text""""""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement find_all_indexes here (iteratively and/or recursively)
