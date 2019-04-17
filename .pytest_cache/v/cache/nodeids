@@ -1,11 +1,13 @@
 [
-  "deque_test.py::DequeTest::test_back",
-  "deque_test.py::DequeTest::test_front",
-  "deque_test.py::DequeTest::test_init",
-  "deque_test.py::DequeTest::test_init_with_list",
-  "deque_test.py::DequeTest::test_length",
-  "deque_test.py::DequeTest::test_pop_back",
-  "deque_test.py::DequeTest::test_pop_front",
-  "deque_test.py::DequeTest::test_push_back",
-  "deque_test.py::DequeTest::test_push_front"
+  "hashtable_test.py::HashTableTest::test_contains",
+  "hashtable_test.py::HashTableTest::test_delete",
+  "hashtable_test.py::HashTableTest::test_init",
+  "hashtable_test.py::HashTableTest::test_items",
+  "hashtable_test.py::HashTableTest::test_keys",
+  "hashtable_test.py::HashTableTest::test_length",
+  "hashtable_test.py::HashTableTest::test_resize",
+  "hashtable_test.py::HashTableTest::test_set_and_get",
+  "hashtable_test.py::HashTableTest::test_set_twice_and_get",
+  "hashtable_test.py::HashTableTest::test_size",
+  "hashtable_test.py::HashTableTest::test_values"
 ]

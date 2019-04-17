@@ -51,7 +51,7 @@ def find_all_indexes(text, pattern):
     O(n * m) run time is worst case scenario where n is length of
     text and m is length of pattern, and the pattern appears as many times as
     possible in text
-    O(n) is best case where no pattern is found as it must parse the text""""""
+    O(n) is best case where no pattern is found as it must parse the text"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement find_all_indexes here (iteratively and/or recursively)
