@@ -97,10 +97,13 @@ def recursive_perm(arr):
 
     to_return = []
 
-    for value in arr:
+    for index, value in enumerate(arr):
 
-        new_list = arr.copy()
-        new_list.remove(value)
+        #new_list = arr.copy()
+        #new_list.remove(value)
+        new_list1 = arr[0:index]
+        new_list2 = arr[index+1:]
+        new_list = new_list1 + new_list2
 
         next_value= []
 
@@ -114,7 +117,5 @@ def recursive_perm(arr):
     previous_perms[check_value] = to_return
     return to_return
 
-print(all_perms(10))
-#perm = (permutation(5, 2))
-#print(perm)
-#print(len(perm))
+print(all_perms(4))
+print(recursive_perm("argh"))
