@@ -1,3 +1,6 @@
+from pprint import pprint
+
+
 # All permutation n choose k
 # Example: n = 3, k = 2, Returns [[1,2],[1,3],[2,3],[2,1],[3,1],[3,2]]
 def permutation(n, k = None):
@@ -79,20 +82,29 @@ def all_perms(n):
     return perms
 
 previous_perms = {}
+bases = 0
+counter = 0
 
 def recursive_perm(arr):
+    global bases
+    global counter
 
     #print("*********" + str(arr))
     if(len(arr) == 1):
-
+        bases += 1
+        # print('base case hits', bases)
         to_return = []
         to_return.append([arr[0]])
         return to_return
 
     check_value = tuple(arr)
-    #print(check_value)
+    # print('checking', check_value)
     if(check_value in previous_perms):
-        #print("using previous work")
+        # print("found perm for", check_value)
+        # print("permutations", previous_perms[check_value])
+        counter += 1
+        # counter = counter + 1
+        # print('perms skipped by memoization', counter)
         return previous_perms[check_value]
 
     to_return = []
@@ -113,9 +125,26 @@ def recursive_perm(arr):
             to_add = item.copy()
             to_add.insert(0, value)
             to_return.append(to_add)
+            # print("  "*depth + str(to_add))
 
     previous_perms[check_value] = to_return
     return to_return
 
-print(all_perms(4))
-print(recursive_perm("argh"))
+
+def test_perms(n):
+    global bases
+    global counter
+    bases = counter = 0
+    print(n)
+    perms = all_perms(n)
+    # pprint(perms)
+    print('base case hits: ', bases)
+    print('perms skipped:  ', counter)
+    print('total skips:    ', bases + counter)
+    print('number of perms:', len(perms))
+    #print(recursive_perm("argh"))
+    print()
+
+
+for n in range(10):
+    test_perms(n)

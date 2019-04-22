@@ -43,6 +43,10 @@ class SearchTest(unittest.TestCase):
         # binary search should return None for any item not in the list
         assert binary_search(names, 'Jeremy') is None
         assert binary_search(names, 'nobody') is None
+        assert binary_search(names, 'Aardvark') is None
+        assert binary_search(names, 'Kai') is None
+        assert binary_search(names, 'Mark') is None
+        assert binary_search(names, 'Sam') is None
 
 
 if __name__ == '__main__':
