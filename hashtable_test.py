@@ -1,6 +1,6 @@
 #!python
 
-from linear_probing import HashTable
+from chaining import HashTable
 import unittest
 # Python 2 and 3 compatibility: unittest module renamed this assertion method
 if not hasattr(unittest.TestCase, 'assertCountEqual'):
@@ -126,10 +126,11 @@ class HashTableTest(unittest.TestCase):
         assert ht.size == 3  # Check size is not overcounting
 
     def test_delete(self):
-        ht = HashTable()
+        ht = HashTable(4)
         ht.set('I', 1)
         ht.set('V', 5)
         ht.set('X', 10)
+        assert ht.load == 4
         assert ht.length() == 3
         assert ht.size == 3
         ht.delete('I')
@@ -140,6 +141,15 @@ class HashTableTest(unittest.TestCase):
             ht.delete('X')  # Key no longer exists
         with self.assertRaises(KeyError):
             ht.delete('A')  # Key does not exist
+        ht.set('I', 1)
+        ht.set('V', 5)
+        ht.set('X', 10)
+        ht.set('II', 2)
+        ht.set('IV', 4)
+        ht.set('XI', 11)
+        assert ht.length() == 6
+        assert ht.size == 6
+
 
 
 if __name__ == '__main__':

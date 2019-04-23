@@ -1,8 +1,12 @@
 [
-  "queue_test.py::QueueTest::test_dequeue",
-  "queue_test.py::QueueTest::test_enqueue",
-  "queue_test.py::QueueTest::test_front",
-  "queue_test.py::QueueTest::test_init",
-  "queue_test.py::QueueTest::test_init_with_list",
-  "queue_test.py::QueueTest::test_length"
+  "set_test.py::SetTest::test_add",
+  "set_test.py::SetTest::test_contains",
+  "set_test.py::SetTest::test_difference",
+  "set_test.py::SetTest::test_init",
+  "set_test.py::SetTest::test_init_with_list",
+  "set_test.py::SetTest::test_intersection",
+  "set_test.py::SetTest::test_is_subset",
+  "set_test.py::SetTest::test_remove",
+  "set_test.py::SetTest::test_size",
+  "set_test.py::SetTest::test_union"
 ]

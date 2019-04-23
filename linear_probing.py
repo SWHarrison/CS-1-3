@@ -131,7 +131,7 @@ class HashTable(object):
         self.buckets[index%self.load] = (key, value)
 
         if(self.load_factor() > self.resize_factor):
-            self.resize()
+            self._resize()
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
@@ -143,6 +143,7 @@ class HashTable(object):
         # If found, delete entry associated with given key
         # Otherwise, raise error to tell user delete failed
         # raise KeyError('Key not found: {}'.format(key))
+        print("deleting",key)
         to_rehash = list()
         index = self._bucket_index(key)
         not_found = True
@@ -154,6 +155,8 @@ class HashTable(object):
                 new_index = index + 1
                 while(self.buckets[new_index%self.load]):
                     to_rehash.append(self.buckets[new_index%self.load])
+                    self.buckets[new_index%self.load] = None
+                    self.size -= 1
                     new_index+=1
                 break
             else:
@@ -166,14 +169,22 @@ class HashTable(object):
             self.set(key_value[0], key_value[1])
 
         self.size -= 1
+        print("size after deletion", self.size)
 
-    def resize(self):
+    def _resize(self, new_size = None):
 
         print("Resizing from " + str(self.size))
         print("Max load is " + str(self.load))
 
+        if new_size is None:
+            self.load *= 2  # Double size
+        # Option to reduce size if buckets are sparsely filled (low load factor)
+        elif new_size is 0:
+            self.load /= 2  # Half size
+        else:
+            self.load = new_size
+
         to_rehash = self.items()
-        self.load *= 2
         self.size = 0
         self.buckets = [None] * self.load
 
@@ -240,6 +251,7 @@ if __name__ == '__main__':
     ht.delete('I')
     ht.delete('X')
     print(ht.buckets)
+    print(ht.size)
     assert ht.length() == 1
     assert ht.size == 1
     print(ht.size)
