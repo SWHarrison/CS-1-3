@@ -1,12 +1,12 @@
 [
-  "set_test.py::SetTest::test_add",
-  "set_test.py::SetTest::test_contains",
-  "set_test.py::SetTest::test_difference",
-  "set_test.py::SetTest::test_init",
-  "set_test.py::SetTest::test_init_with_list",
-  "set_test.py::SetTest::test_intersection",
-  "set_test.py::SetTest::test_is_subset",
-  "set_test.py::SetTest::test_remove",
-  "set_test.py::SetTest::test_size",
-  "set_test.py::SetTest::test_union"
+  "circular_buffer_test.py::CircularBufferTest::test_dequeue",
+  "circular_buffer_test.py::CircularBufferTest::test_dequeue_full",
+  "circular_buffer_test.py::CircularBufferTest::test_enqueue",
+  "circular_buffer_test.py::CircularBufferTest::test_enqueue_full",
+  "circular_buffer_test.py::CircularBufferTest::test_front",
+  "circular_buffer_test.py::CircularBufferTest::test_init",
+  "circular_buffer_test.py::CircularBufferTest::test_init_max_size_greater_than_iterable",
+  "circular_buffer_test.py::CircularBufferTest::test_init_with_list",
+  "circular_buffer_test.py::CircularBufferTest::test_length",
+  "circular_buffer_test.py::CircularBufferTest::test_multiple_enqueue_dequeue"
 ]
