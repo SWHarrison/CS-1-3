@@ -26,6 +26,10 @@ class Set(object):
         except KeyError:
             return False
 
+    def __contains__(self, element):
+
+        return self.contains(element)
+
     def add(self, element):
 
         self.ht.set(element, element)

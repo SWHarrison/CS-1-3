@@ -60,6 +60,26 @@ def encode(num,base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     assert num >= 0, 'number is negative: {}'.format(number)
 
+    fraction_string = ""
+    if(isinstance(num,float)):
+
+        fraction = num - int(num)
+        num = int(num - fraction)
+        fraction_string = ""
+        power = 1
+        while fraction > 0.1:
+            print("fraction",fraction)
+            power /= base
+            print("power",power)
+            current = 0
+            while(current + 1 * power < fraction and current < base - 1):
+                current += 1
+            fraction_string += str(current)
+            fraction -= current * power
+
+
+        print(fraction_string)
+
     max_power_of_x = 1
 
     while max_power_of_x <= (num/base):
@@ -85,23 +105,39 @@ def encode(num,base):
         string += "0"
         max_power_of_x = max_power_of_x //base
 
-    return string
+    return string + "." + fraction_string
 
 def decode(digits,base):
 
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
 
+    dot = digits.find('.')
+    if(dot == -1):
+        dot = len(digits)
     total_base_10 = 0
     base_power = 1
-    for i in range(1,len(digits)+1):
+    for i in range(1,dot+1):
 
-        digit = digits[-i]
+        digit = digits[dot - i]
         if(ord(digit) >= 97):
             digit = ord(digit) - 87
         elif(ord(digit) >= 65):
             digit = ord(digit) - 55
         total_base_10 += base_power * int(digit)
         base_power *= base
+
+    if(0 < dot < len(digits)):
+
+        base_power = 1
+        for i in range(dot + 1,len(digits)):
+            base_power /= base
+            digit = digits[i]
+            if(ord(digit) >= 97):
+                digit = ord(digit) - 87
+            elif(ord(digit) >= 65):
+                digit = ord(digit) - 55
+
+            total_base_10 += base_power * int(digit)
 
     return total_base_10
 
@@ -121,5 +157,6 @@ def convert(digits, base1, base2):
 #print(base_ten_to_two(8))
 #print(base_ten_to_sixteen(263))
 #print(base_10_to_x(255,3))
-decode("r5",36)
+print(encode(127.625,2))
+print(decode("120.13",4))
 print(convert("11111101",9,10))
