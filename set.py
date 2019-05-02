@@ -52,6 +52,9 @@ class Set(object):
 
     def intersection(self, other_set):
 
+        if(self.size() < other_set.size()):
+            return other_set.intersection(self)
+
         new_set = Set()
 
         for item in self.ht.values():
@@ -67,13 +70,20 @@ class Set(object):
         for item in self.ht.values():
             if(not other_set.contains(item)):
                 new_set.add(item)
-
+                
         return new_set
 
     def is_subset(self, other_set):
+
+        if(other_set.size() > self.size()):
+            return False
 
         for item in other_set.ht.values():
             if(not self.contains(item)):
                 return False
 
         return True
+
+    def __iter__(self):
+        items = self.ht.keys()
+        return iter(items)
