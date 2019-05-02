@@ -245,10 +245,10 @@ class BinarySearchTreeTest(unittest.TestCase):
 
     def test_items_in_order_with_7_numbers(self):
         # Create a complete binary search tree of 7 items in level-order
-        items = [4, 2, 6, 1, 3, 5, 7]
+        items = [4, 2, 6, 1, 3, 5, 7, 9, 8, 10]
         tree = BinarySearchTree(items)
         # Ensure the in-order traversal of tree items is ordered correctly
-        assert tree.items_in_order() == [1, 2, 3, 4, 5, 6, 7]
+        assert tree.items_in_order() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     def test_items_pre_order_with_7_numbers(self):
         # Create a complete binary search tree of 7 items in level-order
