@@ -318,7 +318,8 @@ class BinarySearchTree(object):
         items = []
         if not self.is_empty():
             # Traverse tree post-order from root, appending each node's item
-            self._traverse_post_order_iterative(self.root, items.append)
+            #self._traverse_post_order_recursive(self.root, items.append)
+            items = self._traverse_post_order_iterative(self.root)
         # Return post-order list of all items in tree
         return items
 
@@ -332,12 +333,12 @@ class BinarySearchTree(object):
             self._traverse_post_order_recursive(node.right, visit)
             visit(node.data)
 
-    def _traverse_post_order_iterative(self, node, visit):
+    def _traverse_post_order_iterative(self, node):
         """Traverse this binary tree with iterative post-order traversal (DFS).
         Start at the given node and visit each node with the given function.
         TODO: Running time: ??? Why and under what conditions?
         TODO: Memory usage: ??? Why and under what conditions?"""
-        stack = Stack()
+        '''stack = Stack()
         stack.push(node)
         visited = set()
         while not stack.is_empty():
@@ -348,7 +349,23 @@ class BinarySearchTree(object):
             else:
                 node = stack.pop()
                 visit(node.data)
-                visited.add(node.data)
+                visited.add(node.data)'''
+
+        items = [None] * self.size
+
+        i = self.size
+        stack = Stack()
+        stack.push(node)
+        while not stack.is_empty():
+            i -= 1
+            node = stack.pop()
+            items[i] = node.data
+            if(node.left != None):
+                stack.push(node.left)
+            if(node.right != None):
+                stack.push(node.right)
+
+        return items
 
 
 
