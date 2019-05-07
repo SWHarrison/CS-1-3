@@ -65,17 +65,11 @@ def find_all_indexes(text, pattern):
 
     while(current_index != None and offset <= (len(text) - len(pattern))):
 
-        #print("offset " + str(offset))
-
-
         current_index = find_index(text,pattern, offset)
-        #print("current_index " + str(current_index))
         if(current_index == None):
             return to_return
 
         offset = (1 + current_index)
-
-
         to_return.append(current_index)
 
     return to_return

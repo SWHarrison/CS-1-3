@@ -166,44 +166,14 @@ def test_hash_table():
 
     current = time.perf_counter()
     ht = HashTable()
-    '''print('hash table: {}'.format(ht))
-
-    print('\nTesting set:')
-    for key, value in [('I', 1), ('V', 5), ('X', 10)]:
-        print('set({!r}, {!r})'.format(key, value))
-        ht.set(key, value)
-        print('hash table: {}'.format(ht))
-
-    print('\nTesting get:')
-    for key in ['I', 'V', 'X']:
-        value = ht.get(key)
-        print('get({!r}): {!r}'.format(key, value))
-
-    print('contains({!r}): {}'.format('X', ht.contains('X')))
-    print('length: {}'.format(ht.length()))
-
-    # Enable this after implementing delete method
-    delete_implemented = True
-    if delete_implemented:
-        print('\nTesting delete:')
-        for key in ['I', 'V', 'X']:
-            print('delete({!r})'.format(key))
-            ht.delete(key)
-            print('hash table: {}'.format(ht))
-
-        print('contains(X): {}'.format(ht.contains('X')))
-        print('length: {}'.format(ht.length()))'''
 
     for i in range(100000):
-        #ht.set(random.randrange(10000))
-        #ht.set(chr(random.randrange(26)+97))
-        ht.set(read_words[random.randrange(235886)])
+        ht.set(read_words[random.randrange(235886)], None)
 
     print(time.perf_counter()-current)
     print("Size is " + str(ht.size))
     print("load is " + str(ht.load))
-    #print(ht.items())
-    #print(time.perf_counter()-current)
+
 
 
 if __name__ == '__main__':
