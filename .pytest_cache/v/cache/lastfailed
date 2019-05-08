@@ -13,5 +13,6 @@
   "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace": true,
   "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_mixed_casing": true,
   "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_punctuation": true,
-  "permutation_test.py::RecursionTest::test_permutation_by_length_with_small_integers_pick_k": true
+  "permutation_test.py::RecursionTest::test_permutation_by_length_with_small_integers_pick_k": true,
+  "tree_map_test.py::TreeMapTest::test_length": true
 }

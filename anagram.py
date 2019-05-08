@@ -43,5 +43,34 @@ def find_anagrams(word):
 
     return to_return
 
-print(is_anagram("Sams", "Mass"))
-print(find_anagrams("gelatin"))
+words = []
+to_take_out = [[0,2],[0,4],[1,0],[1,1],[1,3],[2,4],[3,3],[3,4]]
+#words.append(find_anagrams("tefon"))
+#words.append(find_anagrams("sokik"))
+#words.append(find_anagrams("niumem"))
+#words.append(find_anagrams("siconu"))
+words.append("often")
+words.append("kiosk")
+words.append("immune")
+words.append("cousin")
+
+print(find_anagrams("stinks"))
+
+'''letters = ""
+for item in to_take_out:
+    letters += words[item[0]][item[1]]
+
+print(letters)
+list_num = list(range(len(letters)))
+print(list_num)
+already_done = []
+
+for i in range(len(letters)):
+
+    not_i = letters[0:i] + letters[i+1:]
+    #print(not_i)
+    for j in range(len(not_i)):
+
+        not_j = not_i[0:j] + not_i[j+1:]
+        dict = histogram_dictionary(not_j)
+        if(dict is in already_done):'''

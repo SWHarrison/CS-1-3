@@ -132,7 +132,7 @@ def recursive_perm(arr):
 
 
 def test_perms(n):
-    global bases
+    '''global bases
     global counter
     bases = counter = 0
     print(n)
@@ -143,8 +143,7 @@ def test_perms(n):
     print('total skips:    ', bases + counter)
     print('number of perms:', len(perms))
     #print(recursive_perm("argh"))
-    print()
+    print()'''
+    pprint(recursive_perm("tisins"))
 
-
-for n in range(10):
-    test_perms(n)
+test_perms(1)

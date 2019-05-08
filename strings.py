@@ -25,7 +25,7 @@ def find_index(text, pattern, offset = 0):
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
     if(len(pattern) == 0):
-        return 0 + offset
+        return offset
 
     #for index, letter in enumerate(text):
     for index in range(offset, len(text) - len(pattern) + 1):
@@ -60,7 +60,6 @@ def find_all_indexes(text, pattern):
     offset = 0
 
     if(len(pattern) == 0):
-
         return list(range(0,len(text)))
 
     while(current_index != None and offset <= (len(text) - len(pattern))):
