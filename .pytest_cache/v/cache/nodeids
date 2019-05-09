@@ -1,10 +1,10 @@
 [
-  "tree_map_test.py::TreeMapTest::test_contains",
-  "tree_map_test.py::TreeMapTest::test_init",
-  "tree_map_test.py::TreeMapTest::test_items",
-  "tree_map_test.py::TreeMapTest::test_keys",
-  "tree_map_test.py::TreeMapTest::test_set_and_get",
-  "tree_map_test.py::TreeMapTest::test_set_twice_and_get",
-  "tree_map_test.py::TreeMapTest::test_size",
-  "tree_map_test.py::TreeMapTest::test_values"
+  "decimal_search_tree_test.py::DecimalTreeNodeTest::test_height",
+  "decimal_search_tree_test.py::DecimalTreeNodeTest::test_init",
+  "decimal_search_tree_test.py::DecimalTreeNodeTest::test_is_branch",
+  "decimal_search_tree_test.py::DecimalTreeNodeTest::test_is_leaf",
+  "decimal_search_tree_test.py::DecimalSearchTreeTest::test_find_price",
+  "decimal_search_tree_test.py::DecimalSearchTreeTest::test_init",
+  "decimal_search_tree_test.py::DecimalSearchTreeTest::test_insert_with_phone_numbers",
+  "decimal_search_tree_test.py::DecimalSearchTreeTest::test_search_with_phone_numbers"
 ]
