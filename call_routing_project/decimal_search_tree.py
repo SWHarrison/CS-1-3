@@ -1,3 +1,5 @@
+import pickle, time
+
 class DecimalTreeNode(object):
 
     def __init__(self, data):
@@ -132,28 +134,60 @@ class DecimalSearchTree(object):
         digit = int(number[0])
         remainder = number[1:]
         while(node.nexts[digit] != None):
+            #print("current best price is",current_best_price)
             node = node.nexts[digit]
             if(node.data != None):
                 current_best_price = node.data
 
+            #print("remainder of number is", remainder)
             if(len(remainder) > 0):
                 digit = int(remainder[0])
                 remainder = remainder[1:]
             else:
                 break
 
+        #print("returning best price as",current_best_price)
         return current_best_price
 
 
 if __name__ == '__main__':
-    #file = open('route_costs10.txt','r')
-    #read_words = file.readlines()
-    #file.close()
 
-    tree = DecimalSearchTree()
-    tree.insert('000',0.50)
-    tree.insert('001',0.05)
-    tree.insert('01',0.06)
-    tree.insert('0',0.08)
-    tree.insert('00',0.09)
-    print(tree.find_price('00141555'))
+    current = time.perf_counter()
+    '''file = open('route-costs-10000000.txt','r')
+    read_numbers = file.readlines()
+    file.close()
+    print(time.perf_counter()-current)'''
+
+
+
+    '''tree = DecimalSearchTree()
+
+    for number in read_numbers:
+        split_number = number.strip().split(',')
+        phone_num = split_number[0][1:]
+        cost = float(split_number[1])
+        #print(phone_num)
+        #print(cost)
+        tree.insert(phone_num,cost)
+
+    print(tree.size)
+    print(time.perf_counter()-current)
+    pickle.dump(tree, open( "save.p", "wb" ))'''
+    tree = pickle.load( open( "save.p", "rb" ) )
+    print("time to load:",time.perf_counter()-current)
+    print(tree.size)
+
+    file = open('phone-numbers-10000.txt','r')
+    read_numbers = file.readlines()
+    file.close()
+
+    file2 = open('phone-numbers-10000-test.txt',"w")
+
+    for number in read_numbers:
+        number = number.strip()
+        phone_num = number[1:]
+        cost = tree.find_price(phone_num)
+        file2.write(phone_num + " cost: " + str(cost)+"\n")
+
+    file2.close()
+    print("time to check numbers:",time.perf_counter()-current)
