@@ -49,6 +49,7 @@ class DecimalSearchTree(object):
         """Initialize this Decimal search tree and insert the given items."""
         self.root = DecimalTreeNode('+')
         self.size = 0
+        self.num_nodes = 0
 
     def __repr__(self):
         """Return a string representation of this Decimal search tree."""
@@ -117,7 +118,9 @@ class DecimalSearchTree(object):
         if(len(number) == 0):
             if(node.data == None):
                 self.size += 1
-            node.data = data
+                node.data = data
+            elif(node.data > data):
+                node.data = data
             return
 
         digit = int(number[0])
@@ -125,6 +128,7 @@ class DecimalSearchTree(object):
 
         if(node.nexts[digit] == None):
             node.nexts[digit] = DecimalTreeNode(None)
+            self.num_nodes += 1
         self._insert(remainder, data, node.nexts[digit])
 
     def find_price(self, number):
@@ -153,14 +157,14 @@ class DecimalSearchTree(object):
 if __name__ == '__main__':
 
     current = time.perf_counter()
-    '''file = open('route-costs-10000000.txt','r')
+    file = open('route-costs-10000000.txt','r')
     read_numbers = file.readlines()
     file.close()
-    print(time.perf_counter()-current)'''
+    print(time.perf_counter()-current)
 
 
 
-    '''tree = DecimalSearchTree()
+    tree = DecimalSearchTree()
 
     for number in read_numbers:
         split_number = number.strip().split(',')
@@ -171,11 +175,12 @@ if __name__ == '__main__':
         tree.insert(phone_num,cost)
 
     print(tree.size)
+    print(tree.num_nodes)
     print(time.perf_counter()-current)
-    pickle.dump(tree, open( "save.p", "wb" ))'''
-    tree = pickle.load( open( "save.p", "rb" ) )
-    print("time to load:",time.perf_counter()-current)
-    print(tree.size)
+    pickle.dump(tree, open( "save.p", "wb" ))
+    #tree = pickle.load( open( "save.p", "rb" ) )
+    #print("time to load:",time.perf_counter()-current)
+    '''print(tree.size)
 
     file = open('phone-numbers-10000.txt','r')
     read_numbers = file.readlines()
@@ -190,4 +195,4 @@ if __name__ == '__main__':
         file2.write(phone_num + " cost: " + str(cost)+"\n")
 
     file2.close()
-    print("time to check numbers:",time.perf_counter()-current)
+    print("time to check numbers:",time.perf_counter()-current)'''
