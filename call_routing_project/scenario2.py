@@ -1,3 +1,5 @@
+import time
+
 def create_dict(text_file):
 
     file = open(text_file,'r')
@@ -22,7 +24,7 @@ def check_price(phone_number, cost_checker):
 
     while(len(phone_number) > 1):
 
-        print(phone_number)
+        #print(phone_number)
         if (phone_number in cost_checker):
             return cost_checker[phone_number]
 
@@ -30,10 +32,12 @@ def check_price(phone_number, cost_checker):
 
     return 0
 
+current = time.perf_counter()
 cost_checker = create_dict('route-costs-106000.txt')
 file = open('phone-numbers-10000.txt','r')
 read_numbers = file.readlines()
 file.close()
+print(time.perf_counter()-current)
 
 file2 = open('phone-numbers-10000-test-scenario2.txt',"w")
 for number in read_numbers:
@@ -42,3 +46,4 @@ for number in read_numbers:
     file2.write(number+ " cost: " + str(cost)+"\n")
 
 file2.close()
+print(time.perf_counter()-current)

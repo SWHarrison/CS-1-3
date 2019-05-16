@@ -131,6 +131,26 @@ class DecimalSearchTree(object):
             self.num_nodes += 1
         self._insert(remainder, data, node.nexts[digit])
 
+    def replace(self, number, data):
+
+        self._replace(number, data, self.root)
+
+    def _replace(self, number, data, node):
+        """Insert the given number in order into this Decimal search tree.
+        Best case: O(1) when adding to empty tree
+        Worst case: O(log n) when node is lowest level of tree"""
+        # Handle the case where the tree is empty
+        if(len(number) == 0):
+            node.data = data
+            return
+
+        digit = int(number[0])
+        remainder = number[1:]
+
+        if(node.nexts[digit] == None):
+            raise KeyError ('Number not in tree')
+        self._replace(remainder, data, node.nexts[digit])
+
     def find_price(self, number):
 
         current_best_price = None
