@@ -226,6 +226,17 @@ class BinarySearchTreeTest(unittest.TestCase):
         assert tree.root.left.left is None
         assert tree.root.left.right is None
 
+    def test_delete_with_linked_list_trees(self):
+        # Create a complete binary search tree of 7 items in level-order
+        items = [1, 2, 3, 4, 5, 6]
+        tree = BinarySearchTree(items)
+        tree.delete(2)
+        assert tree.root.data == 1
+        assert tree.root.left is None
+        assert tree.root.right.data == 3
+        assert tree.root.right.right.data == 4
+        assert tree.root.right.left is None
+
     def test_items_in_order_with_3_strings(self):
         # Create a complete binary search tree of 3 strings in level-order
         items = ['B', 'A', 'C']

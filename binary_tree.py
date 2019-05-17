@@ -225,34 +225,53 @@ class BinarySearchTree(object):
         elif(node.is_branch()):
             print(node, "is branch")
 
-            #find predecessor
-            if(node.left != None):
-                current = node.left
-                parent = node
-                while(not current.is_leaf()):
-                    parent = current
-                    current = current.right
+            if(node.left and node.right):
+                #find predecessor
+                if(node.left != None):
+                    current = node.left
+                    parent = node
+                    while(current.right and not current.is_leaf()):
+                        parent = current
+                        current = current.right
 
-                node.data = current.data
-                if(parent != node):
-                    parent.right = None
-                else:
-                    parent.left = None
+                    node.data = current.data
+                    if(parent != node):
+                        parent.right = None
+                    else:
+                        parent.left = None
 
-            #find successor
+                #find successor, unused after changes to delete
+                '''else:
+                    current = node.right
+                    parent = node
+                    while(current.left and not current.is_leaf()):
+                        parent = current
+                        current = current.left
+
+                    node.data = current.data
+                    if(parent != node):
+                        parent.left = None
+                    else:
+                        parent.right = None'''
             else:
-                current = node.right
-                parent = node
-                while(not current.is_leaf()):
-                    parent = current
-                    current = current.left
-
-                node.data = current.data
-                if(parent != node):
-                    parent.left = None
-                else:
-                    parent.right = None
-
+                #only left child exists
+                if(node.left):
+                    next_node = node.left
+                    new_data = next_node.data
+                    node.data = new_data
+                    node.left = next_node.left
+                    node.right = next_node.right
+                    next_node.right = None
+                    next_node.left = None
+                #only right child exists
+                elif(node.right):
+                    next_node = node.right
+                    new_data = next_node.data
+                    node.data = new_data
+                    node.left = next_node.left
+                    node.right = next_node.right
+                    next_node.right = None
+                    next_node.left = None
 
     def items_in_order(self):
         """Return an in-order list of all items in this binary search tree."""
